@@ -1,0 +1,60 @@
+{
+    "name": "remote-ftp-vscode",
+    "displayName": "Remote FTP",
+    "description": "",
+    "version": "0.1.0",
+    "publisher": "Patrick-Bruckner",
+    "engines": {
+        "vscode": "^1.19.0"
+    },
+    "categories": [
+        "Other"
+    ],
+    "activationEvents": [
+        "*",
+        "onView:ftpbrowser"
+    ],
+    "main": "./out/remote-ftp-vscode",
+    "contributes": {
+        "commands": [
+            {
+                "command": "extension.connect",
+                "title": "Connect"
+            }
+        ],
+        "views": {
+            "explorer": [
+                {
+                    "id": "ftpbrowser",
+                    "name": "FTP Browser",
+                    "when": "show-ftp-browser"
+                }
+            ]
+        },
+        "menus": {
+        }
+    },
+    "scripts": {
+        "vscode:prepublish": "npm run compile",
+        "compile": "tsc -p ./",
+        "watch": "tsc -watch -p ./",
+        "postinstall": "node ./node_modules/vscode/bin/install",
+        "test": "npm run compile && node ./node_modules/vscode/bin/test"
+    },
+    "dependencies": {
+        "@icetee/ftp": "^0.3.15",
+        "event-kit": "^2.3.0",
+        "fs-plus": "^3.0.1",
+        "ignore": "^3.3.7",
+        "ssh-config": "^1.0.1",
+        "ssh2": "^0.5.5",
+        "ssh2-streams": "^0.1.20",
+        "strip-json-comments": "^2.0.1",
+        "vscode": "^1.1.6"
+    },
+    "devDependencies": {
+        "@types/mocha": "^2.2.42",
+        "@types/node": "^7.0.43",
+        "typescript": "^2.6.2"
+    }
+}
