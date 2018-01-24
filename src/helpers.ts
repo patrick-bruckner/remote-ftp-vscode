@@ -10,7 +10,7 @@ let addIconToElement;
 // export const checkIgnoreRemote = item => (item && !atom.project.remoteftp.checkIgnore(item.name.attr('data-path')));
 // export const checkIgnoreLocal = item => (!atom.project.remoteftp.checkIgnore(item));
 export const checkPaths = (index, elem) => (elem.getPath ? elem.getPath() : '');
-export const hasProject = () => vscode.workspace.workspaceFolders.length;
+export const hasProject = () => vscode.workspace.workspaceFolders ? vscode.workspace.workspaceFolders.length : 0;
 // export const multipleHostsEnabled = () => atom.config.get('remote-ftp.beta.multipleHosts');
 export const multipleHostsEnabled = () => false;
 export const hasOwnProperty = ({ obj, prop }) => Object.prototype.hasOwnProperty.call(obj, prop);

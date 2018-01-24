@@ -7,7 +7,7 @@ export class File {
   private emitter;
   private parent;
   private name;
-  private client;
+  public client;
   private isSelected;
   private status;
   private size;

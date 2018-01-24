@@ -9,7 +9,7 @@ class Directory {
   private parent;
   private name;
   public path;
-  private client;
+  public client;
   private isExpanded;
   private isSelected;
   public status;
@@ -108,6 +108,7 @@ class Directory {
               parent: this,
               original: item,
               name: name,
+              client: this.root.client
             });
           } else {
             entry = this.folders[index];

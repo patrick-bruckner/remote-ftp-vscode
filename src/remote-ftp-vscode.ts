@@ -25,6 +25,7 @@ class ftpExplorerProvider implements vscode.TreeDataProvider<File|Directory> {
 
   public getTreeItem(element: File|Directory): vscode.TreeItem {
     let ti = new vscode.TreeItem(element.getName());
+    // ti.resourceUri = vscode.Uri.file(element.client.getFilePath(element.local))
 
     if (element instanceof Directory) {
       ti.collapsibleState = vscode.TreeItemCollapsibleState.Collapsed;
